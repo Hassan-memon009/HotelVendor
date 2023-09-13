@@ -1,0 +1,79 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Spinner
+        android:id="@+id/spinnerNearestStation"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/etAddress"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/spinnerNearestStation"
+        android:hint="Address"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/etPhone"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/etAddress"
+        android:hint="Phone"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/etOpeningTime"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/etPhone"
+        android:hint="Opening Time"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/etClosingTime"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/etOpeningTime"
+        android:hint="Closing Time"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/btnSelectImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etClosingTime"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/deep_jungle_green"
+        android:text="Upload Image"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnSelectImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/deep_jungle_green"
+        android:text="Submit" />
+
+    <FrameLayout
+        android:id="@+id/loadingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true" />
+
+    </FrameLayout>
+</RelativeLayout>

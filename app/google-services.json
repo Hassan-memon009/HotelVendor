@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "598074691739",
+    "firebase_url": "https://railfood-15523-default-rtdb.firebaseio.com",
+    "project_id": "railfood-15523",
+    "storage_bucket": "railfood-15523.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:598074691739:android:239fdc7bf64ad8cc78b63e",
+        "android_client_info": {
+          "package_name": "com.example.hotelvendor"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTwJEBFGPFCfHiTKulZP-Bz4IsKHhTJIs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:598074691739:android:4d99af18f411bf3478b63e",
+        "android_client_info": {
+          "package_name": "com.example.railfood"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTwJEBFGPFCfHiTKulZP-Bz4IsKHhTJIs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
