@@ -1,5 +1,6 @@
 package com.example.hotelvendor
 
+import HotelInfoBottomSheetFragment
 import android.content.Intent
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
@@ -10,10 +11,6 @@ import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.FirebaseApp
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
 
 data class User(
     val username: String = "",
@@ -23,17 +20,10 @@ data class User(
 
 class Signup : AppCompatActivity() {
     private var isPasswordVisible = false
-    private lateinit var auth: FirebaseAuth
-    private lateinit var database: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        FirebaseApp.initializeApp(this)
         setContentView(R.layout.activity_signup)
-
-        // Initialize Firebase Authentication
-        auth = FirebaseAuth.getInstance()
-        database = FirebaseDatabase.getInstance().getReference("Hotels")
 
         val loginAccountTextView = findViewById<TextView>(R.id.etnewact)
         loginAccountTextView.setOnClickListener {
@@ -56,32 +46,15 @@ class Signup : AppCompatActivity() {
             if (usernameText.isNotEmpty() && emailText.isNotEmpty() && passwordText.isNotEmpty() && confirmPasswordText.isNotEmpty()) {
                 if (passwordText == confirmPasswordText) {
                     if (isValidPassword(passwordText)) {
-                        // Create a new user account with Firebase Authentication
-                        auth.createUserWithEmailAndPassword(emailText, passwordText)
-                            .addOnCompleteListener(this) { task ->
-                                if (task.isSuccessful) {
-                                    // User registration success
-                                    val user = auth.currentUser
-                                    val uid = user?.uid
+                        // Create a User object with the user's details
+                        val userData = User(usernameText, emailText, passwordText)
 
-                                    // Store additional user data in Realtime Database
-                                    uid?.let {
-                                        val userData = User(usernameText, emailText, passwordText)
-                                        database.child(it).setValue(userData)
-                                    }
+                        // Pass the User object to the HotelInfoBottomSheetFragment
+                        val intent = Intent(this, HotelInfoBottomSheetFragment::class.java)
+                        intent.putExtra("userData", userData)
+                        startActivity(intent)
 
-                                    val intent = Intent(this,HotelInfoBottomSheetFragment::class.java)
-                                    startActivity(intent)
-                                    Toast.makeText(this, "SIGNUP Successfully", Toast.LENGTH_SHORT).show()
-                                } else {
-                                    // User registration failed
-                                    Toast.makeText(
-                                        this,
-                                        "User registration failed: ${task.exception?.message}",
-                                        Toast.LENGTH_SHORT
-                                    ).show()
-                                }
-                            }
+                        Toast.makeText(this, "SIGNUP Successfully", Toast.LENGTH_SHORT).show()
                     } else {
                         Toast.makeText(
                             this,

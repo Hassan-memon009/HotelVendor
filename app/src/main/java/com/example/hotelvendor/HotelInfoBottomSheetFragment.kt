@@ -1,24 +1,23 @@
-package com.example.hotelvendor
-
 import android.app.TimePickerDialog
 import android.content.Intent
 import android.net.Uri
-import android.util.Log
 import android.os.Bundle
-import android.app.Activity.RESULT_OK
 import android.text.format.DateFormat
+import android.util.Log
+import android.app.Activity.RESULT_OK
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.core.view.isVisible
+import com.example.hotelvendor.R
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import java.util.*
 
-data class Hotel_User(
+data class HotelUser(
     val hotelName: String,
     val email: String,
     val password: String,
@@ -177,8 +176,8 @@ class HotelInfoBottomSheetFragment(
                 Log.d("ImageUpload", "Image URL: $imageUrl")
 
                 // Here you can continue with storing the imageUrl and hotelUser in the database
-                val personalizedKey = generatePersonalizedKey(nearestStationText, hotelName)
-                val hotelUser = Hotel_User(
+                val personalizedKey = generatePersonalizedKey(nearestStationText, addressText)
+                val hotelUser = HotelUser(
                     hotelName, email, password,
                     nearestStationText, addressText, phoneText, personalizedKey, imageUrl, openingTimeText, closingTimeText
                 )
@@ -216,10 +215,10 @@ class HotelInfoBottomSheetFragment(
         }
     }
 
-    private fun generatePersonalizedKey(nearestStation: String, hotelName: String): String {
+    private fun generatePersonalizedKey(nearestStation: String, address: String): String {
         val stationCode = nearestStation.take(3).toUpperCase()
-        val hotelCode = hotelName.take(2).toUpperCase()
+        val addressCode = address.take(2).toUpperCase()
         val randomNumber = (100..999).random()
-        return "$stationCode$hotelCode$randomNumber"
+        return "$stationCode$addressCode$randomNumber"
     }
 }
