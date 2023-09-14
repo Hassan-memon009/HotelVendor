@@ -4,6 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/deep_jungle_green"
     tools:context=".menu_crud">
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="365dp"
+            android:layout_height="262dp"
+            android:gravity="center"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/btnCurrentOrder"
+                android:layout_width="267dp"
+                android:layout_height="wrap_content"
+                android:background="@color/purple_700"
+                android:text="Current Order" />
+
+            <Button
+                android:id="@+id/btnAddMenuItem"
+                android:layout_width="267dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@color/purple_700"
+                android:text="Add Menu Item" />
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

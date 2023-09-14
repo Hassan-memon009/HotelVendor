@@ -45,7 +45,6 @@ data class HotelUser(
     }
 }
 
-
 class HotelInfoBottomSheetFragment : BottomSheetDialogFragment() {
 
     private lateinit var database: DatabaseReference
@@ -84,6 +83,9 @@ class HotelInfoBottomSheetFragment : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Initialize Firebase Database reference
+        database = FirebaseDatabase.getInstance().reference
+
         // Retrieve data from arguments
         username = arguments?.getString(ARG_USERNAME) ?: ""
         email = arguments?.getString(ARG_EMAIL) ?: ""
@@ -106,7 +108,6 @@ class HotelInfoBottomSheetFragment : BottomSheetDialogFragment() {
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerNearestStation.adapter = spinnerAdapter
 
-        // Handle image selection
         // Handle image selection
         imageButton.setOnClickListener {
             val intent = Intent(Intent.ACTION_PICK)
