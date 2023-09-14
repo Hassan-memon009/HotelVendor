@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
                 if (dataSnapshot.exists()) {
                     var isPasswordCorrect = false
                     for (userSnapshot in dataSnapshot.children) {
-                        val user = userSnapshot.getValue(Hotel_User::class.java)
+                        val user = userSnapshot.getValue(HotelUser::class.java)
                         if (user != null && user.password == password) {
                             // User exists and the password matches, allow login
                             isPasswordCorrect = true
@@ -89,11 +89,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun togglePasswordVisibility() {
         if (isPasswordVisible) {
-            passwordEditText.transformationMethod = null
-            showPasswordButton.setImageResource(R.drawable.ic_eye) // Change to your icon
-        } else {
             passwordEditText.transformationMethod = PasswordTransformationMethod.getInstance()
-            showPasswordButton.setImageResource(R.drawable.ic_eye) // Change to your icon
+            showPasswordButton.setImageResource(R.drawable.ic_eye) // Change to your icon when password is hidden
+        } else {
+            passwordEditText.transformationMethod = null
+            showPasswordButton.setImageResource(R.drawable.ic_eye) // Change to your icon when password is visible
         }
         passwordEditText.setSelection(passwordEditText.text.length)
     }

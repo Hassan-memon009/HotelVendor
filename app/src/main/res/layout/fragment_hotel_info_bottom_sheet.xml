@@ -24,27 +24,37 @@
         android:hint="Phone"
         android:layout_marginTop="16dp" />
 
-    <EditText
-        android:id="@+id/etOpeningTime"
+    <Button
+        android:id="@+id/btnOpeningTime"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/etPhone"
         android:hint="Opening Time"
-        android:layout_marginTop="16dp" />
+        android:textColorHint="@color/white"
+        android:layout_marginTop="16dp"
+        android:textAlignment="center"
+        android:drawableStart="@android:drawable/ic_menu_today"
+        android:backgroundTint="@color/deep_jungle_green"
+        android:paddingStart="8dp"/>
 
-    <EditText
-        android:id="@+id/etClosingTime"
+    <Button
+        android:id="@+id/btnClosingTime"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_below="@id/etOpeningTime"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnOpeningTime"
         android:hint="Closing Time"
-        android:layout_marginTop="16dp" />
+        android:textColorHint="@color/white"
+        android:layout_marginTop="16dp"
+        android:textAlignment="center"
+        android:drawableStart="@android:drawable/ic_menu_today"
+        android:backgroundTint="@color/deep_jungle_green"
+        android:paddingStart="8dp"/>
 
     <Button
         android:id="@+id/btnSelectImage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/etClosingTime"
+        android:layout_below="@id/btnClosingTime"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/deep_jungle_green"

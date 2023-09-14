@@ -1,6 +1,5 @@
 package com.example.hotelvendor
 
-import HotelInfoBottomSheetFragment
 import android.content.Intent
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
@@ -11,12 +10,6 @@ import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-
-data class User(
-    val username: String = "",
-    val email: String = "",
-    val password: String = ""
-)
 
 class Signup : AppCompatActivity() {
     private var isPasswordVisible = false
@@ -46,13 +39,9 @@ class Signup : AppCompatActivity() {
             if (usernameText.isNotEmpty() && emailText.isNotEmpty() && passwordText.isNotEmpty() && confirmPasswordText.isNotEmpty()) {
                 if (passwordText == confirmPasswordText) {
                     if (isValidPassword(passwordText)) {
-                        // Create a User object with the user's details
-                        val userData = User(usernameText, emailText, passwordText)
-
-                        // Pass the User object to the HotelInfoBottomSheetFragment
-                        val intent = Intent(this, HotelInfoBottomSheetFragment::class.java)
-                        intent.putExtra("userData", userData)
-                        startActivity(intent)
+                        // Instead of using an Intent, show the bottom sheet fragment
+                        val bottomSheetFragment = HotelInfoBottomSheetFragment.newInstance(usernameText, emailText, passwordText)
+                        bottomSheetFragment.show(supportFragmentManager, bottomSheetFragment.tag)
 
                         Toast.makeText(this, "SIGNUP Successfully", Toast.LENGTH_SHORT).show()
                     } else {
