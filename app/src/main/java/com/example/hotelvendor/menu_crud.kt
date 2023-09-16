@@ -6,6 +6,6 @@ import android.os.Bundle
 class menu_crud : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.menu_crud)
+        setContentView(R.layout.activity_menu_crud)
     }
 }
