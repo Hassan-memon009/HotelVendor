@@ -16,7 +16,7 @@
             android:name=".menu_crud"
             android:exported="false" />
         <activity
-            android:name=".bottom_sheet_hotel_info"
+            android:name=".HotelInfoBottomSheetFragment"
             android:exported="false" />
         <activity
             android:name=".Signup"

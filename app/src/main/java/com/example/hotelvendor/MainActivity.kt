@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
                         if (user != null && user.password == password) {
                             // User exists and the password matches, allow login
                             isPasswordCorrect = true
-                            val intent = Intent(this@MainActivity, MenuCrudActivity::class.java)
+                            val intent = Intent(this@MainActivity, menu_crud::class.java)
                             startActivity(intent)
                             Toast.makeText(this@MainActivity, "Login Successful", Toast.LENGTH_SHORT).show()
                             return
