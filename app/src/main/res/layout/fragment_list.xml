@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/deep_jungle_green"
-    tools:context=".menu_crud">
+    tools:context=".List">
 
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
@@ -19,15 +19,16 @@
 
         <LinearLayout
             android:layout_width="365dp"
-            android:layout_height="262dp"
+            android:layout_height="378dp"
             android:gravity="center"
             android:orientation="vertical">
+
             <Button
                 android:id="@+id/btnCurrentOrder"
                 android:layout_width="267dp"
                 android:layout_height="wrap_content"
                 android:background="@color/purple_700"
-                android:text="Current Order" />
+                android:text="Add Item" />
 
             <Button
                 android:id="@+id/btnAddMenuItem"
@@ -35,7 +36,23 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:background="@color/purple_700"
-                android:text="Add Menu Item" />
+                android:text="Delete Item" />
+
+            <Button
+                android:id="@+id/btnModify"
+                android:layout_width="267dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@color/purple_700"
+                android:text="Modify Item" />
+
+            <Button
+                android:id="@+id/btnAvailabilty"
+                android:layout_width="267dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@color/purple_700"
+                android:text="Availability" />
 
 
         </LinearLayout>
