@@ -180,7 +180,7 @@ class HotelInfoBottomSheetFragment : BottomSheetDialogFragment() {
                             "Data stored successfully",
                             Toast.LENGTH_SHORT
                         ).show()
-                        val intent = Intent(requireContext(),menu_crud::class.java)
+                        val intent = Intent(requireContext(),MainActivity::class.java)
                         startActivity(intent)
                     }.addOnFailureListener { exception ->
                         // Handle failure and hide loading indicator

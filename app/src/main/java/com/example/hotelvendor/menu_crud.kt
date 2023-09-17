@@ -1,8 +1,9 @@
 package com.example.hotelvendor
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class menu_crud : AppCompatActivity() {
 
@@ -10,21 +11,17 @@ class menu_crud : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_crud)
 
-        val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottomNavigationView)
-        bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.order -> {
-                    // Handle "Order" menu item click
-                    // Replace this with your desired behavior
-                    return@setOnNavigationItemSelectedListener true
-                }
-                R.id.list -> {
-                    // Handle "List" menu item click
-                    // Replace this with your desired behavior
-                    return@setOnNavigationItemSelectedListener true
-                }
-                else -> return@setOnNavigationItemSelectedListener false
-            }
+        val btnOrder = findViewById<Button>(R.id.btnOrder) // Add this line
+        val btnList = findViewById<Button>(R.id.btnlist) // Add this line
+
+        btnOrder.setOnClickListener {
+            val intent = Intent(this, Order::class.java)
+            startActivity(intent)
+        }
+
+        btnList.setOnClickListener {
+            val intent = Intent(this, List::class.java)
+            startActivity(intent)
         }
     }
 }

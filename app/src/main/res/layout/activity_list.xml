@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/deep_jungle_green"
-    tools:context=".List">
+    tools:context=".ui.list">
 
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
@@ -57,4 +57,6 @@
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

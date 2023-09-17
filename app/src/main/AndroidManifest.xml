@@ -13,6 +13,12 @@
         android:theme="@style/Theme.HotelVendor"
         tools:targetApi="31">
         <activity
+            android:name=".Order"
+            android:exported="false" />
+        <activity
+            android:name=".ui.list"
+            android:exported="false" />
+        <activity
             android:name=".menu_crud"
             android:exported="false" />
         <activity
