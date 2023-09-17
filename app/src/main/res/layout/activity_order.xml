@@ -6,4 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".Order">
 
+    <include
+        android:id="@+id/navbarLayout"
+        layout="@layout/navbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="665dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
