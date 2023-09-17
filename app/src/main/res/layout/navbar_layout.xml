@@ -1,0 +1,37 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/navbarLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:background="#FFFFFF"
+    android:elevation="8dp"
+    android:orientation="horizontal">
+
+    <!-- Navbar buttons here -->
+    <Button
+        android:id="@+id/btnOrder"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackground"
+        android:drawableTop="@drawable/baseline_format_list_bulleted_24"
+        android:gravity="center"
+        android:text="Order"
+        android:textColor="#737373"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btnlist"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackground"
+        android:drawableTop="@drawable/baseline_add_24"
+        android:gravity="center"
+        android:text="List"
+        android:textColor="#737373"
+        android:textSize="12sp" />
+
+
+</LinearLayout>
