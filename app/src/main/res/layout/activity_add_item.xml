@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/deep_jungle_green"
+    tools:context=".AddItem">
+
+    <!-- First LinearLayout with TextView -->
+    <LinearLayout
+        android:id="@+id/firstLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:background="@drawable/custom_edittext"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/infoTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Information About Items"
+            android:textAlignment="center"
+            android:textSize="30dp" />
+
+    </LinearLayout>
+
+    <!-- Second LinearLayout with CardViews and EditTexts -->
+    <LinearLayout
+        android:id="@+id/secondLinearLayout"
+        android:layout_width="0dp"
+        android:layout_height="360dp"
+        android:layout_marginTop="68dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/firstLinearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/custom_edittext">
+
+        <!-- First CardView with EditText -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp">
+
+            <EditText
+                android:id="@+id/ItemName"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Enter Item Name" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Second CardView with EditText -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp">
+
+            <EditText
+                android:id="@+id/ItemDescription"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Enter Item Description" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Third CardView with EditText -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp">
+
+            <EditText
+                android:id="@+id/ItemPrice"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Enter Item Price" />
+
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btnOrder"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/deep_jungle_green"
+            android:text="Submit"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
