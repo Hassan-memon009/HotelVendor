@@ -20,7 +20,7 @@ class Signup : AppCompatActivity() {
 
         val loginAccountTextView = findViewById<TextView>(R.id.etnewact)
         loginAccountTextView.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, menu_crud::class.java)
             startActivity(intent)
         }
 

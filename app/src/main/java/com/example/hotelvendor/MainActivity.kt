@@ -1,14 +1,15 @@
 package com.example.hotelvendor
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.method.PasswordTransformationMethod
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.*
 import com.google.firebase.FirebaseApp
 
@@ -50,6 +51,7 @@ class MainActivity : AppCompatActivity() {
                 readData(email, password)
             } else {
                 Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()
+                Log.e(TAG, "Empty email or password")
             }
         }
     }
@@ -65,24 +67,28 @@ class MainActivity : AppCompatActivity() {
                         if (user != null && user.password == password) {
                             // User exists and the password matches, allow login
                             isPasswordCorrect = true
-                            val intent = Intent(this@MainActivity, Order::class.java)
+                            val intent = Intent(this@MainActivity, menu_crud::class.java)
                             startActivity(intent)
                             Toast.makeText(this@MainActivity, "Login Successful", Toast.LENGTH_SHORT).show()
+                            Log.i(TAG, "Login successful")
                             return
                         }
                     }
                     // User exists but password doesn't match
                     if (!isPasswordCorrect) {
                         Toast.makeText(this@MainActivity, "Incorrect Password", Toast.LENGTH_SHORT).show()
+                        Log.e(TAG, "Incorrect Password")
                     }
                 } else {
                     // User doesn't exist
                     Toast.makeText(this@MainActivity, "User doesn't exist", Toast.LENGTH_SHORT).show()
+                    Log.e(TAG, "User doesn't exist")
                 }
             }
 
             override fun onCancelled(error: DatabaseError) {
                 Toast.makeText(this@MainActivity, "Failed to read data", Toast.LENGTH_SHORT).show()
+                Log.e(TAG, "Failed to read data: ${error.message}")
             }
         })
     }
@@ -96,5 +102,9 @@ class MainActivity : AppCompatActivity() {
             showPasswordButton.setImageResource(R.drawable.ic_eye) // Change to your icon when password is visible
         }
         passwordEditText.setSelection(passwordEditText.text.length)
+    }
+
+    companion object {
+        private const val TAG = "MainActivity"
     }
 }
